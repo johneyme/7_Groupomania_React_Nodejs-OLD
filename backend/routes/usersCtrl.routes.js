@@ -2,6 +2,10 @@
 const bcrypt = require('bcrypt');
 const jwtUtils = require('../utils/jwt.utils.js');
 const models = require('../models');
+const asyncLib = require('async');
+
+// Constants
+const PASSWORD_REGEX = /^(?=.*\d).{4,8}$/;
 
 // Routes
 module.exports = {
@@ -14,6 +18,13 @@ module.exports = {
         if (phone == null || username == null || password == null) {
             return res.status(400).json({ 'error': 'missing parameters' });
         }
+        if(phone.length != 10 ){
+            return res.status(400).json({ 'error': 'Veuillez rentrer un numéro de téléphone (ex:0612345678)' });
+        }
+        if (!PASSWORD_REGEX.test(password)) {
+            return res.status(400).json({ 'error': 'Mot de passe non-valide (Une taille de 4 à 8 caractèrs et doit inclure un chiffre minimum - Caractères spéciaux non-valides -' });
+        }
+        
 
         // TODO verify 
         models.User.findOne({
