@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "?Admindev123789!",
+    "password": "admin1234",
     "database": "database_development_p7",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "?Admindev123789!",
+    "password": "admin1234",
     "database": "database_test_p7",
     "host": "localhost",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "?Admindev123789!",
+    "password": "admin1234",
     "database": "database_production_p7",
     "host": "localhost",
     "dialect": "mysql"
