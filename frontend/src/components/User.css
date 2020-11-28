@@ -1,0 +1,38 @@
+.logout {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    padding:20px 0 20px 0;
+	font:bold 13px Arial;
+	background:#fd9800;
+	color:#fff;
+	border-radius:2px;
+	width:250px;
+    border:none;
+    
+}
+.logout:hover {
+    background: #d67321;
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+
+.delete {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    padding:6px 0 6px 0;
+	font:bold 13px Arial;
+	background:#d64e19;
+	color:#fff;
+	border-radius:2px;
+	width:150px;
+    border:none;
+    
+}
+.delete:hover {
+    background: #9c2415;
+    transition: 0.5s;
+    cursor: pointer;
+    text-transform: uppercase;
+
+}

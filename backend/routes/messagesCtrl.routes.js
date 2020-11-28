@@ -43,7 +43,6 @@ module.exports = {
                     models.Message.create({
                         title: title,
                         content: content,
-                        likes: 0,
                         UserId: userFound.id
                     })
                         .then(function (newMessage) {
