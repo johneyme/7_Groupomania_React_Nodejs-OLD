@@ -11,11 +11,12 @@ header {
   
 }
 .mur .messages{
+  padding: 10px;
   max-width: 50em;
   margin: auto;
   margin-top: 10px;
-  border: solid rgb(85, 85, 85) 2px;
-  border-radius: 12px;
+  border: solid rgb(85, 85, 85) 3px;
+  border-radius: 25px;
 }
 
 .messages {
@@ -34,6 +35,7 @@ i.fas {
 
 i.fas:hover {
   color:#bb4e54;
+  transition: 0.3s;
 }
 
 @media only screen and (max-width : 400px) {

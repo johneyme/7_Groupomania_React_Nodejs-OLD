@@ -1,0 +1,48 @@
+.inputLogin {
+    margin: auto;
+    max-width: 399px;
+    border: solid rgb(85, 85, 85) 3px;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.validerLogin {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    padding:6px 0 6px 0;
+	font:bold 13px Arial;
+	background:#478bf9;
+	color:#fff;
+	border-radius:2px;
+	width:150px;
+    border:none;
+    
+}
+.validerLogin:hover {
+    background:#0b3e8f;
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+
+label {
+    color: brown;
+    font-size: large;
+    font-weight: bold;
+    
+}
+#identifiant {
+    margin-bottom: 40px;
+}
+input {
+    margin-top: 15px;
+    border: solid black 1px;
+    height: 30px;
+}
+
+@media only screen and (max-width : 400px) {
+    .inputLogin {
+        border: none;
+        text-align: center;
+    }
+}

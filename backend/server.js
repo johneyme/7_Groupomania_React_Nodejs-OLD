@@ -1,6 +1,7 @@
 // Imports
 const express = require('express');
 const bodyParser = require('body-parser')
+const cors = require("cors")
 const apiRouter = require('./apiRouter').router;
 
 // Instantiate server
@@ -15,6 +16,10 @@ server.get('/', function (req, res) {
     res.setHeader('Content-Type', 'text/html');
     res.status(200).send('<h1>Hello World');
 });
+
+server.use(cors())
+
+
 
 server.use('/api/', apiRouter);
 
