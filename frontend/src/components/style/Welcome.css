@@ -1,0 +1,21 @@
+.pagewelcome a {
+    text-decoration: none;
+    color: indianred;
+    
+}
+.pagewelcome div {
+    margin-bottom: 40px;
+    padding: 10px;
+    
+}
+
+.lien {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    border: solid gray 2px;
+    border-radius: 10px;
+   
+}
+
+
+

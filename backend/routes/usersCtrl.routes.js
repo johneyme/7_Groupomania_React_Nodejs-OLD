@@ -142,6 +142,28 @@ module.exports = {
             res.status(500).json({ 'error': 'cannot fetch user' });
         });
     },
+
+    deleteProfile: function(req, res) {
+        const headerAuth = req.headers['authorization'];
+        const userId = jwtUtils.getUserId(headerAuth);
+
+        if (userId < 0)
+            return res.status(400).json({ 'error': 'Mauvais token' });
+
+
+        models.User.destroy({
+            attributes: ['id', 'phone', 'username'],
+            where: { id: userId }
+    }).then(function (user) {
+        if (user) {
+            res.status(201).json(user);
+        } else {
+            res.status(404).json({ 'error': 'Utilisateur non trouvé' });
+        }
+    }).catch(function (err) {
+        res.status(500).json({ 'error': 'cannot fetch user' });
+    });
+}
     /*updateUserProfile: function (req, res) {
         // Getting auth header
         const headerAuth = req.headers['authorization'];

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './Register.css';
+import '../style/Register.css';
 const API_REG = 'http://localhost:8080/api/users/register';
 
 class Register extends Component {

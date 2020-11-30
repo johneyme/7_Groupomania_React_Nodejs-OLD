@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import axios from 'axios';
-import './AddMessage.css';
+import '../style/AddMessage.css';
 //const API = 'http://localhost:8080/api/messages';
 
 class AddMessage extends Component {

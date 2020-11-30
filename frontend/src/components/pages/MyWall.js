@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import "./MyWall.css"
+import "../style/MyWall.css"
 const API = 'http://localhost:8080/api/messages';
 
 class MyWall extends Component {

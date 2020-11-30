@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 //import axios from 'axios';
-import './User.css';
+import Logout from "../log/Logout"
+import Delete from "../log/Delete"
+import '../style/User.css';
 //const API = 'http://localhost:8080/api/users/me';
 
 class Users extends Component {
@@ -13,8 +15,8 @@ class Users extends Component {
     return (
       <div className="User">
         <h1>Profil</h1>
-        <button className="logout">Se Déconnecter</button>
-        <br /><button className="delete">Supprimer son profil</button>
+        <Logout />
+        <br /><Delete />
       </div>
     );
   }

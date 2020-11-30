@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './Login.css';
+import '../style/Login.css';
 const API_LOG = 'http://localhost:8080/api/users/login';
+
 
 class Login extends Component {
 
@@ -70,4 +71,3 @@ onSubmit(e) {
 
 
 export default Login;
-
