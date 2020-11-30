@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 //import axios from 'axios';
 import './AddMessage.css';
-const API = 'http://localhost:8080/api/messages';
+//const API = 'http://localhost:8080/api/messages';
 
-class App extends Component {
+class AddMessage extends Component {
 
   state = {
   }
@@ -28,4 +28,4 @@ class App extends Component {
 }
 
 
-export default App;
+export default AddMessage;

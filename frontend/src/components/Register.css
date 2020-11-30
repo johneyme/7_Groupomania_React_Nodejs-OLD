@@ -34,6 +34,10 @@ label {
 #identifiant {
     margin-bottom: 40px;
 }
+
+#username {
+    margin-bottom: 40px;
+}
 input {
     margin-top: 15px;
     border: solid black 1px;

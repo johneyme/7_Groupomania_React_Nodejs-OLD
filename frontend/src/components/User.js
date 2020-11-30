@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 //import axios from 'axios';
 import './User.css';
-const API = 'http://localhost:8080/api/messages';
+//const API = 'http://localhost:8080/api/users/me';
 
-class App extends Component {
+class Users extends Component {
 
   state = {
   }
@@ -22,4 +22,5 @@ class App extends Component {
 }
 
 
-export default App;
+export default Users;
+
