@@ -38,12 +38,18 @@ onSubmit(e) {
   axios.post(API_LOG , userObject)
       .then((res) => {
           console.log(res.data)
+          localStorage.setItem('userTokenLog', JSON.stringify(res.data));
+          console.log(localStorage)
       }).catch((error) => {
           console.log(error)
       });
 
   this.setState({ phone: '', password: '' })
+  
+  //window.location = "/mywall";
 }
+
+
 
   render() {
 
@@ -55,7 +61,7 @@ onSubmit(e) {
           <label htmlFor="identifiant">Identifiant</label>
           <br /><input id="identifiant" value={this.state.phone} onChange={this.onChangePhone} />
           <br /><label htmlFor="mdp">Mot de passe</label>
-          <br /><input id="mdp"value={this.state.password} onChange={this.onChangePassword} />
+          <br /><input id="mdp" type='password' value={this.state.password} onChange={this.onChangePassword} />
           <br/><button className="validerLogin">Valider</button>
           </div>
           </form>

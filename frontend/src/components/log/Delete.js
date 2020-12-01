@@ -1,30 +1,28 @@
   
 import React from "react";
 import axios from "axios";
-import cookie from "js-cookie";
-const API = 'http://localhost:8080/api/users/'
+const API = 'http://localhost:8080/api/users/delete/'
 
 const Delete = () => {
-  const removeCookie = (key) => {
-    if (window !== "undefined") {
-      cookie.remove(key, { expires: 1 });
-    }
-  };
+  
+  const tokenId = JSON.parse(localStorage.getItem(('userTokenLog')))
+  console.log(tokenId.token)
+  axios.defaults.headers.common = {'Authorization': `Bearer ${tokenId.token}`}
 
-  const deleteProfile = async () => {
-    await axios({
-      method: "post",
-      url: API + 'delete',
-    })
-      .then(() => removeCookie("jwt"))
-      .catch((err) => console.log(err));
+  const deleteProfile = async()=> {
+  axios.post(API)
+  .then((res) => {
+    console.log(res.data)
+}).catch((error) => {
+    console.log(error)
+});
     
     //window.location = "/";
   };
 
   return (
-    <div onClick={deleteProfile}>
-      <button className="delete">Supprimer son profil</button>
+    <div>
+      <button onClick={deleteProfile} className="delete">Supprimer son profil</button>
     </div>
   );
 };

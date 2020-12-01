@@ -156,7 +156,7 @@ module.exports = {
             where: { id: userId }
     }).then(function (user) {
         if (user) {
-            res.status(201).json(user);
+            res.status(201).json({"success": "Utilisateur supprimé"});
         } else {
             res.status(404).json({ 'error': 'Utilisateur non trouvé' });
         }

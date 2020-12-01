@@ -50,6 +50,7 @@ onSubmit(e) {
       });
 
   this.setState({ phone: '', username:'', password: '' })
+  window.location = "/login";
 }
 
   render() {
