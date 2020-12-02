@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "../style/MyWall.css"
-const API = 'http://localhost:8080/api/messages';
+const API = 'http://localhost:8080/api/messages?order=id:ASC';
 
 class MyWall extends Component {
 

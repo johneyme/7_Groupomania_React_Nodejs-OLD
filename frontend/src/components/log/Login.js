@@ -40,13 +40,12 @@ onSubmit(e) {
           console.log(res.data)
           localStorage.setItem('userTokenLog', JSON.stringify(res.data));
           console.log(localStorage)
+          window.location = "/mywall";
       }).catch((error) => {
-          console.log(error)
+          (window.alert("Identifiant/Mot de passe Incorrect"))
       });
 
   this.setState({ phone: '', password: '' })
-  
-  //window.location = "/mywall";
 }
 
 

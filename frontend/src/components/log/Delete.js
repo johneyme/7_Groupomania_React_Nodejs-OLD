@@ -10,14 +10,17 @@ const Delete = () => {
   axios.defaults.headers.common = {'Authorization': `Bearer ${tokenId.token}`}
 
   const deleteProfile = async()=> {
+    if (window.confirm("Voulez-vous vraiment supprimer votre profil ?"))
+    {
   axios.post(API)
   .then((res) => {
     console.log(res.data)
 }).catch((error) => {
     console.log(error)
 });
-    
-    //window.location = "/";
+    localStorage.clear()
+    window.location = "/";
+}
   };
 
   return (

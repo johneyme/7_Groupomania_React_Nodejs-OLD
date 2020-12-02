@@ -39,7 +39,8 @@ onSubmit(e) {
       title: this.state.title,
       content: this.state.content,
   };
-
+  if (window.confirm("Voulez-vous envoyer la publication ?"))
+  {
   axios.post(API_MESS , messObject)
   
       .then((res) => {
@@ -49,7 +50,8 @@ onSubmit(e) {
       });
 
   this.setState({ title: '', content: ''})
-  
+  window.location = "/mywall";
+    }
 }
 
   render() {
