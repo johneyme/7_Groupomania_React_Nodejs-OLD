@@ -37,11 +37,9 @@ onSubmit(e) {
 
   axios.post(API_LOG , userObject)
       .then((res) => {
-          console.log(res.data)
           localStorage.setItem('userTokenLog', JSON.stringify(res.data));
-          console.log(localStorage)
           window.location = "/mywall";
-      }).catch((error) => {
+      }).catch(() => {
           (window.alert("Identifiant/Mot de passe Incorrect"))
       });
 

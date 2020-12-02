@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "../style/MyWall.css"
-const API = 'http://localhost:8080/api/messages?order=id:ASC';
+const API = 'http://localhost:8080/api/messages?order=id:DESC';
 
 class MyWall extends Component {
 
@@ -47,14 +47,19 @@ class MyWall extends Component {
 
     render() {
 
-      const allMessage = this.state.messages.map((message)=> <div className="messages"  key={message.id}>
-        <h3>{message.User.username}</h3><h4>{message.title}</h4><p>{message.content}</p></div>)
+      const allMessage = this.state.messages.map((message)=> 
+      <div className="messages"  key={message.id}>
+        
+        <h3>{message.User.username}</h3>
+        <h4>{message.title}</h4>
+        <p>{message.content}</p>
+        </div>)
      
   
         return (
             
             <div>
-                <h2>Bonjour, {this.props.name} !</h2>
+                <h2>Bonjour !</h2>
                 {allMessage}
                 
                 
@@ -64,47 +69,3 @@ class MyWall extends Component {
 }
 
 export default MyWall;
-
-/*
-import React, { Component } from "react";
-
-import UserService from "../services/user.service";
-
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      content: ""
-    };
-  }
-
-  componentDidMount() {
-    UserService.getPublicContent().then(
-      response => {
-        this.setState({
-          content: response.data
-        });
-      },
-      error => {
-        this.setState({
-          content:
-            (error.response && error.response.data) ||
-            error.message ||
-            error.toString()
-        });
-      }
-    );
-  }
-
-  render() {
-    return (
-      <div className="container">
-        <header className="jumbotron">
-          <h3>{this.state.content}</h3>
-        </header>
-      </div>
-    );
-  }
-}
-*/

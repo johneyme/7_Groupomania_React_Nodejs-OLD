@@ -20,6 +20,7 @@ class AddMessage extends Component {
     }
 }
 
+
 onChangeTitle(e) {
   this.setState({ title: e.target.value })
 }
@@ -32,7 +33,6 @@ onSubmit(e) {
   e.preventDefault()
   
   const tokenId = JSON.parse(localStorage.getItem(('userTokenLog')))
-  console.log(tokenId.token)
   axios.defaults.headers.common = {'Authorization': `Bearer ${tokenId.token}`}
 
   const messObject = {
@@ -56,6 +56,11 @@ onSubmit(e) {
 
   render() {
 
+    const tokenId = JSON.parse(localStorage.getItem(('userTokenLog')))
+  if(tokenId === null) {
+    window.location = "/login"
+  }
+
     return (
       <div className="ajoutmessage">
           <h1>Ajouter un message</h1>
@@ -65,7 +70,7 @@ onSubmit(e) {
           <br /><input id="titre" value={this.state.title} onChange={this.onChangeTitle} />
           <br /><label htmlFor="contenu">Contenu du message</label>
           <br /><textarea id="contenu" value={this.state.content} onChange={this.onChangeContent} />
-          <br/><button className="post">Poster le message</button>
+          <br /><button className="post">Poster le message</button>
           </div>
           </form>
       </div>

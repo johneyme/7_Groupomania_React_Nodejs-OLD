@@ -6,7 +6,6 @@ const API = 'http://localhost:8080/api/users/delete/'
 const Delete = () => {
   
   const tokenId = JSON.parse(localStorage.getItem(('userTokenLog')))
-  console.log(tokenId.token)
   axios.defaults.headers.common = {'Authorization': `Bearer ${tokenId.token}`}
 
   const deleteProfile = async()=> {

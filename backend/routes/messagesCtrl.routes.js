@@ -90,5 +90,27 @@ module.exports = {
           console.log(err);
           res.status(500).json({ "error": "Champs invalides" });
         });
-      }
+      },
+
+      /*deleteMessage: function(req, res) {
+        const headerAuth = req.headers['authorization'];
+        const userId = jwtUtils.getUserId(headerAuth);
+
+        if (userId < 0)
+            return res.status(400).json({ 'error': 'Mauvais token' });
+
+
+        models.Message.destroy({
+            attributes: ['title', 'content'],
+            where: { id: userId }
+    }).then(function (user) {
+        if (user) {
+            res.status(201).json({"success": "Message supprimé"});
+        } else {
+            res.status(404).json({ 'error': 'Message non trouvé' });
+        }
+    }).catch(function (err) {
+        res.status(500).json({ 'error': 'cannot fetch user' });
+    });
+}*/
     }

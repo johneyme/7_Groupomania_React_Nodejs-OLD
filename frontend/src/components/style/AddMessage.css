@@ -50,6 +50,11 @@ textarea {
     border: solid gray 2px;
 }
 
+.deletemessage {
+    float: right;
+}
+
+
 
 
 @media only screen and (max-width : 400px) {

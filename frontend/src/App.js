@@ -13,9 +13,7 @@ import logo from './images/icon-left-font-monochrome-white.png'
 class App extends Component {
 
   state = {
-    nom: "nom de l'utilisateur"
   }
-  // ATTENTION A BIEN REMETTRE MYWALL AU LIEU DE REGISTER
   render() {
 
     return (
