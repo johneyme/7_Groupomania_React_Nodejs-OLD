@@ -5,7 +5,7 @@ const API = 'http://localhost:8080/api/messages?order=id:DESC';
 
 class MyWall extends Component {
 
-  
+
   // default State object
   state = {
     messages: []
@@ -22,6 +22,7 @@ class MyWall extends Component {
             id: c.id,
             title: c.title,
             content: c.content,
+            img: c.img,
             User: c.User
           };
         });
@@ -35,37 +36,39 @@ class MyWall extends Component {
         // store the new state object in the component's state
         this.setState(newState);
         console.log(newMessage)
-        
-        
-        
+
+
+
       })
-      
+
       .catch(error => console.log(error));
-  }
-  
-  
+  };
 
-    render() {
 
-      const allMessage = this.state.messages.map((message)=> 
-      <div className="messages"  key={message.id}>
-        
+  render() {
+
+    
+    
+    const allMessage = this.state.messages.map((message) =>
+      <div className="messages" key={message.id}>
+
         <h3>{message.User.username}</h3>
         <h4>{message.title}</h4>
         <p>{message.content}</p>
-        </div>)
-     
-  
-        return (
-            
-            <div>
-                <h2>Bonjour !</h2>
-                {allMessage}
-                
-                
-            </div>
-        )
-    };
+        <div className="imagemywall">
+          <img src={message.img} alt=""></img>
+        </div>
+      </div>);
+
+    return (
+
+      <div>
+        <h2>Bonjour !</h2>
+        {allMessage}
+
+      </div>
+    )
+  };
 }
 
 export default MyWall;

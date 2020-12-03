@@ -18,6 +18,7 @@ module.exports = {
         //Param
         const title = req.body.title;
         const content = req.body.content;
+        const img = req.body.img
 
         if (title == null || content == null) {
             return res.status(400).json({ 'error': 'Contenu vide' });
@@ -43,6 +44,7 @@ module.exports = {
                     models.Message.create({
                         title: title,
                         content: content,
+                        img: img,
                         UserId: userFound.id
                     })
                         .then(function (newMessage) {

@@ -12,11 +12,13 @@ class AddMessage extends Component {
 
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeContent= this.onChangeContent.bind(this);
+    this.onChangeImg= this.onChangeImg.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
         title: '',
         content: '',
+        img:''
     }
 }
 
@@ -28,6 +30,9 @@ onChangeTitle(e) {
 onChangeContent(e) {
   this.setState({ content: e.target.value })
 }
+onChangeImg(e) {
+  this.setState({ img: e.target.value })
+}
 
 onSubmit(e) {
   e.preventDefault()
@@ -38,6 +43,7 @@ onSubmit(e) {
   const messObject = {
       title: this.state.title,
       content: this.state.content,
+      img: this.state.img
   };
   if (window.confirm("Voulez-vous envoyer la publication ?"))
   {
@@ -49,7 +55,7 @@ onSubmit(e) {
           console.log(error)
       });
 
-  this.setState({ title: '', content: ''})
+  this.setState({ title: '', content: '', img:''})
   window.location = "/mywall";
     }
 }
@@ -70,6 +76,8 @@ onSubmit(e) {
           <br /><input id="titre" value={this.state.title} onChange={this.onChangeTitle} />
           <br /><label htmlFor="contenu">Contenu du message</label>
           <br /><textarea id="contenu" value={this.state.content} onChange={this.onChangeContent} />
+          <br /><label htmlFor="URL">Lien contenu multimédia (optionnel)</label>
+          <br /><input id="URL" value={this.state.img} onChange={this.onChangeImg} placeholder="https://www.example.com/images/dinosaur.jpg" />
           <br /><button className="post">Poster le message</button>
           </div>
           </form>

@@ -2,4 +2,14 @@
 h4 {
     color: brown;
     text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.imagemywall {
+    text-align: center;
+}
+img {
+    max-width: 300px;
+    justify-content: center;
+    border-radius: 1.5em;
 }

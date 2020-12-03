@@ -7,6 +7,6 @@ Pour démmarer celui-ci:
 Pour démarrer la base de données, vous devez au préalable avoir mySQL sur votre ordinateur.
 - Dans un terminal > cd backend > Sequelize db:create > sequelize db:migrate
 
-Pensez à mettre vos paramètre dans  ./config/config.json
+Pensez à mettre vos paramètres dans  ./config/config.json
 
 =)
