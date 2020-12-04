@@ -7,9 +7,7 @@ class AddMessage extends Component {
 
   constructor(props) {
     super(props)
-    
-    
-
+   
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeContent= this.onChangeContent.bind(this);
     this.onChangeImg= this.onChangeImg.bind(this);

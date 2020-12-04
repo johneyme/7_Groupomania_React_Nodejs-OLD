@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 import Logout from "../log/Logout"
 import Delete from "../log/Delete"
 import '../style/User.css';
-//const API = 'http://localhost:8080/api/users/me';
+
 
 class Users extends Component {
 
   state = {
   }
-
   render() {
 
   const tokenId = JSON.parse(localStorage.getItem(('userTokenLog')))

@@ -2,7 +2,7 @@
 let express      = require('express');
 let usersCtrl    = require('./routes/usersCtrl.routes');
 let messagesCtrl = require('./routes/messagesCtrl.routes');
-const jwtAuth = require('../backend/utils/jwt.utils')
+
 
 
 // Router
