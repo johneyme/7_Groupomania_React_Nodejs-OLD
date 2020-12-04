@@ -1,7 +1,8 @@
 // Imports
-var express      = require('express');
-var usersCtrl    = require('./routes/usersCtrl.routes');
-var messagesCtrl = require('./routes/messagesCtrl.routes');
+let express      = require('express');
+let usersCtrl    = require('./routes/usersCtrl.routes');
+let messagesCtrl = require('./routes/messagesCtrl.routes');
+const jwtAuth = require('../backend/utils/jwt.utils')
 
 
 // Router
@@ -17,7 +18,8 @@ exports.router = (function() {
   // Messages routes
   apiRouter.route('/messages/new/').post(messagesCtrl.createMessage);
   apiRouter.route('/messages/').get(messagesCtrl.listMessages);
-  //apiRouter.route('/messages/delete').post(messagesCtrl.deleteMessage)
+  apiRouter.route('/messages/:id').put(messagesCtrl.updateMessage);
+  apiRouter.route('/messages/:id').delete(messagesCtrl.deleteMessage)
  
   return apiRouter;
 })();

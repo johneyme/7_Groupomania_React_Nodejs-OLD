@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "../style/MyWall.css"
+import DeleteMess from '../utils/BoutonSuppr';
 const API = 'http://localhost:8080/api/messages?order=id:DESC';
 
 class MyWall extends Component {
@@ -47,18 +48,22 @@ class MyWall extends Component {
 
   render() {
 
-    
-    
-    const allMessage = this.state.messages.map((message) =>
-      <div className="messages" key={message.id}>
 
+
+    const allMessage = this.state.messages.map((message) =>
+
+      <div className="messages" key={message.id}>
+        
         <h3>{message.User.username}</h3>
         <h4>{message.title}</h4>
         <p>{message.content}</p>
         <div className="imagemywall">
           <img src={message.img} alt=""></img>
         </div>
-      </div>);
+        <span className="idmess">id: {message.id}</span>
+
+      </div>
+    );
 
     return (
 

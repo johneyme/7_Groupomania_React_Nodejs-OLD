@@ -64,10 +64,10 @@ module.exports = {
     },
 
     listMessages: function(req, res) {
-        var fields  = req.query.fields;
-        var limit   = parseInt(req.query.limit);
-        var offset  = parseInt(req.query.offset);
-        var order   = req.query.order;
+        const fields  = req.query.fields;
+        const limit   = parseInt(req.query.limit);
+        const offset  = parseInt(req.query.offset);
+        const order   = req.query.order;
     
         if (limit > ITEMS_LIMIT) {
           limit = ITEMS_LIMIT;
@@ -94,25 +94,50 @@ module.exports = {
         });
       },
 
-      /*deleteMessage: function(req, res) {
-        const headerAuth = req.headers['authorization'];
-        const userId = jwtUtils.getUserId(headerAuth);
+      updateMessage: function(req, res) {
+        // Getting auth header
+        let headerAuth  = req.headers['authorization'];
+        let userId      = jwtUtils.getUserId(headerAuth);
+
+        // Params
+        if (userId < 0 )
+            return res.status(400).json({ 'error': 'Mauvais token' });
+    
+        models.Message.update({
+            title: req.body.title,
+            content: req.body.content,
+            img: req.body.img,
+            
+          },
+          {
+            where: {
+              id: req.params.id
+            }
+          }).then( (result) => res.json(result) )
+          .catch ((err) => res.json(err))
+        ;
+    },
+
+    
+    deleteMessage: function(req, res) {
+        let headerAuth = req.headers['authorization'];
+        let userId = jwtUtils.getUserId(headerAuth);
 
         if (userId < 0)
             return res.status(400).json({ 'error': 'Mauvais token' });
 
 
         models.Message.destroy({
-            attributes: ['title', 'content'],
-            where: { id: userId }
-    }).then(function (user) {
-        if (user) {
+            attributes: ['title', 'content', 'img'],
+            where: { id: req.params.id }
+    }).then(function (mess) {
+        if (mess) {
             res.status(201).json({"success": "Message supprimé"});
         } else {
             res.status(404).json({ 'error': 'Message non trouvé' });
         }
     }).catch(function (err) {
-        res.status(500).json({ 'error': 'cannot fetch user' });
+        res.status(500).json({ 'error': 'cannot fetch message' });
     });
-}*/
-    }
+}
+}

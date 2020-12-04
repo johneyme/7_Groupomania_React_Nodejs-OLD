@@ -13,3 +13,12 @@ img {
     justify-content: center;
     border-radius: 1.5em;
 }
+
+.deletemessage {
+    float: right
+}
+.idmess {
+    font-size: x-small;
+    color: grey;
+    opacity: 0.33;
+}

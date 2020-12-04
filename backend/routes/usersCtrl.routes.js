@@ -123,8 +123,8 @@ module.exports = {
 
     getUserProfile: function (req, res) {
         // Getting auth header
-        const headerAuth = req.headers['authorization'];
-        const userId = jwtUtils.getUserId(headerAuth);
+        let headerAuth = req.headers['authorization'];
+        let userId = jwtUtils.getUserId(headerAuth);
 
         if (userId < 0)
             return res.status(400).json({ 'error': 'Mauvais token' });
@@ -144,8 +144,8 @@ module.exports = {
     },
 
     deleteProfile: function(req, res) {
-        const headerAuth = req.headers['authorization'];
-        const userId = jwtUtils.getUserId(headerAuth);
+        let headerAuth = req.headers['authorization'];
+        let userId = jwtUtils.getUserId(headerAuth);
 
         if (userId < 0)
             return res.status(400).json({ 'error': 'Mauvais token' });
