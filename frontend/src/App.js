@@ -5,6 +5,7 @@ import Login from './components/log/Login';
 import Register from './components/log/Register';
 import AddMessage from './components/pages/AddMessage';
 import Welcome from './components/pages/Welcome';
+import Admin from './components/pages/Admin';
 import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom"
 import './App.css';
 import logo from './components/images/icon-left-font-monochrome-white.png'
@@ -35,6 +36,7 @@ class App extends Component {
               <Route path='/addmessage' exact component={AddMessage} />
               <Route path='/register' exact component={Register} />
               <Route path='/Login' exact component={Login} />
+              <Route path='/Admin' exact component={Admin} />
             </Switch>
           </div>
         </div>

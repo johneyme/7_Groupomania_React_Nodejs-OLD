@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../style/Login.css';
 const API_LOG = 'http://localhost:8080/api/users/login';
 
 
-class Login extends Component {
+class Admin extends Component {
 
   constructor(props) {
     super(props)
@@ -38,7 +37,7 @@ onSubmit(e) {
   axios.post(API_LOG , userObject)
       .then((res) => {
           localStorage.setItem('userTokenLog', JSON.stringify(res.data));
-          window.location = "/mywall";
+          console.log(localStorage.getItem('userTokenLog'));
       }).catch(() => {
           (window.alert("Identifiant/Mot de passe Incorrect"))
       });
@@ -52,7 +51,7 @@ onSubmit(e) {
 
     return (
       <div className="login">
-          <h1>Connexion au compte</h1>
+          <h1>Connexion Admin</h1>
           <form onSubmit={this.onSubmit}>
             <div className="inputLogin">
           <label htmlFor="identifiant">Identifiant</label>
@@ -62,10 +61,7 @@ onSubmit(e) {
           <br/><button className="validerLogin">Valider</button>
           </div>
           </form>
-          <div>
-            <p>Pour créer un profil, cliquez <span><a href="/register">ICI</a></span></p>
-            <p>Pour obtenir le token Admin cliquez <span><a href="/admin">ICI</a></span></p>
-            </div>
+          <p>Une fois identifié votre Token est inscrit dans votre Console Log afin d'être copié.</p>
             
       </div>
     );
@@ -74,4 +70,4 @@ onSubmit(e) {
 }
 
 
-export default Login;
+export default Admin;

@@ -52,7 +52,7 @@ module.exports = {
                     phone: phone,
                     username: username,
                     password: bcryptedPassword,
-                    isAdmin: 0
+                    isAdmin: 1
                 })
                     .then(function (newUser) {
                         done(newUser);
@@ -130,7 +130,7 @@ module.exports = {
             return res.status(400).json({ 'error': 'Mauvais token' });
 
         models.User.findOne({
-            attributes: ['id', 'phone', 'username'],
+            attributes: ['id', 'phone', 'username', 'isAdmin'],
             where: { id: userId }
         }).then(function (user) {
             if (user) {

@@ -2,6 +2,8 @@
 const models = require('../models');
 const asyncLib = require('async');
 const jwtUtils = require('../utils/jwt.utils')
+const { getUserProfile } = require('./usersCtrl.routes');
+const { generateTokenForUser } = require('../utils/jwt.utils');
 
 // Constants
 const TITLE_LIMIT = 2;
@@ -100,7 +102,7 @@ module.exports = {
         let userId      = jwtUtils.getUserId(headerAuth);
 
         // Params
-        if (userId < 0 )
+        if (userId !== 5 )
             return res.status(400).json({ 'error': 'Mauvais token' });
     
         models.Message.update({
@@ -122,11 +124,13 @@ module.exports = {
     deleteMessage: function(req, res) {
         let headerAuth = req.headers['authorization'];
         let userId = jwtUtils.getUserId(headerAuth);
-
-        if (userId < 0)
+        console.log(userId)
+        
+        if (userId !== 5)
             return res.status(400).json({ 'error': 'Mauvais token' });
-
-
+            
+            
+         
         models.Message.destroy({
             attributes: ['title', 'content', 'img'],
             where: { id: req.params.id }

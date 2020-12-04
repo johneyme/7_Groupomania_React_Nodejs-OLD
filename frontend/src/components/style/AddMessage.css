@@ -50,7 +50,9 @@ textarea {
     border: solid gray 2px;
 }
 
-
+#URL {
+    width: 275px;
+}
 
 
 
