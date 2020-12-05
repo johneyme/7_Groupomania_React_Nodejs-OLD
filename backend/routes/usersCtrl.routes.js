@@ -52,7 +52,7 @@ module.exports = {
                     phone: phone,
                     username: username,
                     password: bcryptedPassword,
-                    isAdmin: 1
+                    isAdmin: 0
                 })
                     .then(function (newUser) {
                         done(newUser);
